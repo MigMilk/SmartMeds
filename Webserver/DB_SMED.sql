@@ -28,7 +28,7 @@ CREATE TABLE `Receitas`(
     `daily_amnt` INT NOT NULL,
     `intro_date` DATE NOT NULL,
     `description` VARCHAR(255) NOT NULL,
-    PRIMARY KEY `receitas_id_primary`(`id`);
+    PRIMARY KEY `receitas_id_primary`(`id`)
 );
 
 CREATE TABLE `Stock`(
@@ -65,7 +65,7 @@ CREATE TABLE `utente_localizaçao`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `utente_id` INT NOT NULL,
     `locale_id` INT NOT NULL,
-    PRIMARY KEY `utente_localizaçao_id_primary`(`id`);
+    PRIMARY KEY `utente_localizaçao_id_primary`(`id`)
 );
 
 CREATE TABLE `utente_tasks`(
