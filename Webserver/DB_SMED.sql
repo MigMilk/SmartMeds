@@ -6,15 +6,15 @@ CREATE TABLE `Login`(
 );
 CREATE TABLE `Users`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Nome` INT NOT NULL,
+    `Nome` VARCHAR(255) NOT NULL,
     PRIMARY KEY `users_id_primary`(`id`)
 );
 
 CREATE TABLE `Utente`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Nome` VARCHAR(255) NOT NULL,
-    `receita_id` INT NOT NULL,
-    `stock_id` INT NOT NULL,
+    `receita_id` INT UNSIGNED NOT NULL,
+    `stock_id` INT UNSIGNED NOT NULL,
     `extra_info` VARCHAR(255) NOT NULL,
     `shared_stock` TINYINT(1) NOT NULL,
     PRIMARY KEY `utente_id_primary`(`id`)
@@ -34,44 +34,44 @@ CREATE TABLE `Receitas`(
 CREATE TABLE `Stock`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `nome_med` VARCHAR(255) NOT NULL,
-    `per_box_amnt` INT NOT NULL,
-    `total_amnt` INT NOT NULL,
+    `per_box_amnt` INT UNSIGNED NOT NULL,
+    `total_amnt` INT UNSIGNED NOT NULL,
     PRIMARY KEY `stock_id_primary`(`id`)
 );
 
 CREATE TABLE `User_utente`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `user_id` INT NOT NULL,
-    `utente_id` INT NOT NULL,
+    `user_id` INT UNSIGNED NOT NULL,
+    `utente_id` INT UNSIGNED NOT NULL,
     PRIMARY KEY `user_utente_id_primary`(`id`)
 );
 
 CREATE TABLE `utente_receitas`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `utente_id` INT NOT NULL,
-    `receita_id` INT NOT NULL,
+    `utente_id` INT UNSIGNED NOT NULL,
+    `receita_id` INT UNSIGNED NOT NULL,
     PRIMARY KEY `utente_receitas_id_primary`(`id`)
 );
 
 CREATE TABLE `Localizaçao`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `piso` INT NOT NULL,
-    `quarto` INT NOT NULL,
-    `corredor` INT NOT NULL,
+    `piso` INT UNSIGNED NOT NULL,
+    `quarto` INT UNSIGNED NOT NULL,
+    `corredor` INT UNSIGNED NOT NULL,
     PRIMARY KEY `localizaçao_id_primary`(`id`)
 );
 
 CREATE TABLE `utente_localizaçao`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `utente_id` INT NOT NULL,
-    `locale_id` INT NOT NULL,
+    `utente_id` INT UNSIGNED NOT NULL,
+    `locale_id` INT UNSIGNED NOT NULL,
     PRIMARY KEY `utente_localizaçao_id_primary`(`id`)
 );
 
 CREATE TABLE `utente_tasks`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `utente_id` INT NOT NULL,
-    `task_id` INT NOT NULL,
+    `utente_id` INT UNSIGNED NOT NULL,
+    `task_id` INT UNSIGNED NOT NULL,
     PRIMARY KEY `utente_tasks_id_primary`(`id`)
 );
 
@@ -91,8 +91,8 @@ CREATE TABLE `time_table`(
 
 CREATE TABLE `utente_stock`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `utente_id` INT NOT NULL,
-    `stock_id` INT NOT NULL,
+    `utente_id` INT UNSIGNED NOT NULL,
+    `stock_id` INT UNSIGNED NOT NULL,
     PRIMARY KEY `utente_stock_id_primary`(`id`)
 );
 
@@ -116,3 +116,6 @@ ALTER TABLE
     `utente_tasks` ADD CONSTRAINT `utente_tasks_utente_id_foreign` FOREIGN KEY(`utente_id`) REFERENCES `Utente`(`id`);
 ALTER TABLE
     `utente_tasks` ADD CONSTRAINT `utente_tasks_task_id_foreign` FOREIGN KEY(`task_id`) REFERENCES `tasks`(`id`);
+
+
+
