@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacaoPEE">
         <activity
-            android:name=".saturday"
+            android:name=".Saturday"
             android:exported="false" />
         <activity
             android:name=".friday"
@@ -33,9 +33,6 @@
             android:exported="false" />
         <activity
             android:name=".newcalendario"
-            android:exported="false" />
-        <activity
-            android:name=".newlogin"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
