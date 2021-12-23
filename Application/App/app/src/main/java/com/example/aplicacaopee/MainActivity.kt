@@ -9,40 +9,41 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
+import android.widget.EditText
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 
 class MainActivity : AppCompatActivity() {
 
-    private val CHANNEL_ID = "channel_id_example_01"        // notificação
-    private val notificationId = 101                        // notificação
+    private val CHANNEL_ID = "channel_id_example_01"                 // notification ID
+    private val notificationId = 101                                 // notification ID
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login)          //adicionar login.xml
-        //setContentView(R.layout.calendario)     //adicionar calendario.xml
+        setContentView(R.layout.login)                               //add login.xml
 
-
+        val Password = findViewById<EditText>(R.id.password)         // TextFile Password
+        val Username = findViewById<EditText>(R.id.username)         // TextFile Username
+        val ConteudoPassword = Password.text.toString()              // TextFile Content Password
+        val ConteudoUsername = Username.text.toString()              // TextFile Content Username
 
         createNotificationChannel()
 
-        //button login
-        val blogin = findViewById<Button>(R.id.loginbtn)
+        val blogin = findViewById<Button>(R.id.loginbtn)             //login button
         // nome da variavel = """""(R.id.nomedobutao)
 
-        //handle button click
-        blogin.setOnClickListener {
-            //start activity intent
+        blogin.setOnClickListener {                                  //handle button click
+                                                                     //start activity intent
             startActivity(Intent(this@MainActivity, newcalendario::class.java))
-            sendNotification()
+            sendNotification()                                       //send Notification
         }
     }
 
-    private fun createNotificationChannel() {
+    private fun createNotificationChannel() {                                       // Function CREATE notification
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Notification Title"
-            val descriptionText = "Notification Description"
+            val name = "Notification Title"                                 // Title variable
+            val descriptionText = "Notification Description"                // Description variable
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
                 description = descriptionText
@@ -53,12 +54,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun sendNotification() {
+    private fun sendNotification() {                                                // Function SEND notification
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle("ATENÇÃO")
-            .setContentText("Login efetuado")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentTitle("ATENÇÃO")                                     // Notification Title
+            .setContentText("Login efetuado")                               // Notification Description
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)               // Notification Priority
         with(NotificationManagerCompat.from(this)) {
             notify(notificationId, builder.build())
         }

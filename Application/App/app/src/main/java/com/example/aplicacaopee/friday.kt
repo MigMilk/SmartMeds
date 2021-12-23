@@ -14,20 +14,20 @@ class friday : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friday)
 
-        val btnsave     = findViewById<Button>(R.id.savebtn)        // Botao
-        val btnview     = findViewById<Button>(R.id.displaybtn)     // Botao
-        val editfile    = findViewById<EditText>(R.id.name)         // Caixa texto
-        val editdata    = findViewById<EditText>(R.id.data)         // Caixa Texto
+        val btnsave     = findViewById<Button>(R.id.savebtn)        // Button
+        val btnview     = findViewById<Button>(R.id.displaybtn)     // Button
+        val editfile    = findViewById<EditText>(R.id.name)         // TextFile Name
+        val editdata    = findViewById<EditText>(R.id.data)         // TextFile Data
 
         btnsave.setOnClickListener {
-            val file = editfile.text.toString()                     // Conteudo caixa de texto
-            val data = editdata.text.toString()                     // Conteudo caixa de texto
+            val file = editfile.text.toString()                     // TextFile Content File Name
+            val data = editdata.text.toString()                     // TextFile Content File Data
 
             val fileOutputStream: FileOutputStream
 
             try {
-                fileOutputStream = openFileOutput(file, Context.MODE_PRIVATE)   // criar o ficheiro
-                fileOutputStream.write(data.toByteArray())                      // escrever no file
+                fileOutputStream = openFileOutput(file, Context.MODE_PRIVATE)   // create file
+                fileOutputStream.write(data.toByteArray())                      // write on file
             }
 
             catch (e: FileNotFoundException){
@@ -42,7 +42,7 @@ class friday : AppCompatActivity() {
         }
 
         btnview.setOnClickListener {
-            val filename = editfile.text.toString()                 // Conteudo caixa de texto
+            val filename = editfile.text.toString()                 // TextFile Content File Name
 
             if(filename.toString()!=null && filename.trim()!=""){
                 var fileInputStream: FileInputStream? = null
@@ -64,7 +64,7 @@ class friday : AppCompatActivity() {
         }
     }
 
-    fun Context.showToast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT) {     // FUNÇÃO MENSAGEM FLUTUANTE
-        Toast.makeText(this,text,duration).show()                                // FUNÇÃO MENSAGEM FLUTUANTE
-    }                                                                                   // FUNÇÃO MENSAGEM FLUTUANTE
+    fun Context.showToast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT) {     // Function send notification in APP
+        Toast.makeText(this,text,duration).show()
+    }
 }
