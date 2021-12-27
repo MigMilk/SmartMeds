@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
@@ -35,8 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         blogin.setOnClickListener {                                  //handle button click
                                                                      //start activity intent
-            startActivity(Intent(this@MainActivity, newcalendario::class.java))
-            sendNotification()                                       //send Notification
+            startActivity(Intent(this@MainActivity, newmenu::class.java))
+            //sendNotification()                                       //send Notification
         }
     }
 
