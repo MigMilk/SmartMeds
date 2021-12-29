@@ -19,7 +19,7 @@ class calendary : AppCompatActivity() {
         var ano = 0;
         var string: String? = ""
         val stringBuilder = StringBuilder()
-        val `is`: InputStream = this.resources.openRawResource(R.raw.sunday)
+        val `is`: InputStream = this.resources.openRawResource(R.raw.sample)
         val reader = BufferedReader(InputStreamReader(`is`))
 
         calendar.setOnDateChangeListener { calendar, i1, i2, i3 ->
@@ -27,21 +27,7 @@ class calendary : AppCompatActivity() {
             mes = i2+1;
             ano = i1;
 
-            //Toast.makeText(this@calendary, "Selected Date: $dia/$mes/$ano", Toast.LENGTH_LONG).show()
-
-            if(dia == 29){
-                while (true) {
-                    try {
-                        if (reader.readLine().also { string = it } == null) break
-                    } catch (e: IOException) {
-                        e.printStackTrace()
-                    }
-                    stringBuilder.append(string).append("\n")
-                }
-                `is`.close()
-                Toast.makeText(baseContext, stringBuilder.toString(),
-                    Toast.LENGTH_LONG).show()
-            }
+            Toast.makeText(this@calendary, "Selected Date: $dia/$mes/$ano", Toast.LENGTH_LONG).show()
         }
     }
 }
