@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.aplicacaopee" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AplicacaoPEE" >
+        <activity
+            android:name=".calendary"
+            android:exported="false" />
+
+        <activity
+            android:name=".newmenu"
+            android:exported="false" />
+        <activity
+            android:name=".Saturday"
+            android:exported="false" />
+        <activity
+            android:name=".friday"
+            android:exported="false" />
+        <activity
+            android:name=".thursday"
+            android:exported="false" />
+        <activity
+            android:name=".wednesday"
+            android:exported="false" />
+        <activity
+            android:name=".tuesday"
+            android:exported="false" />
+        <activity
+            android:name=".monday"
+            android:exported="false" />
+        <activity
+            android:name=".sunday"
+            android:exported="false" />
+        <activity
+            android:name=".newcalendario"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
