@@ -8,6 +8,8 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="31" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -20,6 +22,9 @@
         android:theme="@style/Theme.AplicacaoFinal" >
         <activity
             android:name="com.example.aplicacaofinal.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.aplicacaofinal.Login"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
