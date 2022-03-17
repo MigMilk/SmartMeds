@@ -9,7 +9,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29da1c01-88b5-4104-835b-c6d3bc36a08b" name="Default Changelist" comment="" />
+    <list default="true" id="29da1c01-88b5-4104-835b-c6d3bc36a08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/aplicacaofinal/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/aplicacaofinal/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/aplicacaoFinal.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/aplicacaoFinal.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ficheirosPHP/LoginRegister/DataBaseConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ficheirosPHP/LoginRegister/DataBaseConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ficheirosPHP/LoginRegister/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ficheirosPHP/LoginRegister/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ficheirosPHP/LoginRegister/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ficheirosPHP/LoginRegister/signup.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +56,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bruno\Desktop\PEE\aplicacaoFinal\app\src\main\res\layout" />
       <recent name="C:\Users\bruno\Desktop\PEE\aplicacaoFinal\app\src\main\java\com\example\aplicacaofinal" />
+    </key>
+    <key name="android.template.-851641379">
+      <recent name="com.example.aplicacaofinal" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,5 +142,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

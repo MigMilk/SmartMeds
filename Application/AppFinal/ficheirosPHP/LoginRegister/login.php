@@ -1,9 +1,9 @@
 <?php
 require "DataBase.php";
 $db = new DataBase();
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['user_login']) && isset($_POST['user_pass'])) {
     if ($db->dbConnect()) {
-        if ($db->logIn("users", $_POST['username'], $_POST['password'])) {
+        if ($db->logIn("wp_users", $_POST['user_login'], $_POST['user_pass'])) {
             echo "Login Success";
         } else echo "Username or Password wrong";
     } else echo "Error: Database connection";

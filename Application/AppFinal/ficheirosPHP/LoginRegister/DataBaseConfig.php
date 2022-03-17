@@ -10,12 +10,11 @@ class DataBaseConfig
     public function __construct()
     {
 
-        $this->servername = 'localhost';
-        $this->username = 'root';
-        $this->password = '';
-        $this->databasename = 'test';
+        $this->servername = 'mysql-hosting.ua.pt';
+        $this->username = 'deti-smed-dbo';
+        $this->password = 'wi93zxpKhqDwtz2a';
+        $this->databasename = 'deti-smed';
 
     }
 }
-
 ?>
