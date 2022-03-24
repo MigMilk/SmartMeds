@@ -40,13 +40,13 @@ public class Login extends AppCompatActivity {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            String[] field = new String[2];
+                            String[] field = new String[4];
                             field[0] = "usernamestr";
                             field[1] = "passwordstr";
                             String[] data = new String[2];
-                            data[0] = usernamestr;
-                            data[1] = passwordstr;
-                            PutData putData = new PutData("https://uapt33090-my.sharepoint.com/:u:/g/personal/brunofeitais_ua_pt/Ec7qBWxzHtRFrHyW-f78sY8BRTpAau9qjKaDe_1R_bSBtA?e=4F8qra", "POST", field, data);
+                            data[1] = usernamestr;
+                            data[2] = passwordstr;
+                            PutData putData = new PutData("", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
                                         startActivity(intent);
                                         finish();
                                     } else {
-                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }
