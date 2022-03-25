@@ -31,22 +31,23 @@ public class Login extends AppCompatActivity {
         buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String usernamestr, passwordstr;
-                usernamestr = String.valueOf(textInputEditTextUsername.getText());
-                passwordstr = String.valueOf(textInputEditTextPassword.getText());
+                final String user_login, user_pass;
+                user_login = String.valueOf(textInputEditTextUsername.getText());
+                user_pass = String.valueOf(textInputEditTextPassword.getText());
 
-                if(!usernamestr.equals("") && !passwordstr.equals("")){
+                if(!user_login.equals("") && !user_pass.equals("")){
                     Handler handler = new Handler();
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            String[] field = new String[4];
-                            field[0] = "usernamestr";
-                            field[1] = "passwordstr";
+                            String[] field = new String[2];
+                            field[0] = "user_login";
+                            field[1] = "user_pass";
                             String[] data = new String[2];
-                            data[1] = usernamestr;
-                            data[2] = passwordstr;
-                            PutData putData = new PutData("", "POST", field, data);
+                            data[0] = user_login;
+                            data[1] = user_pass;
+                            PutData putData = new PutData("http://smartmeds.web.ua.pt/App/loginteste.php", "POST", field, data);
+
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
