@@ -1,7 +1,7 @@
 <?php
 require "DataBaseConfig.php";
 
-class DataBase
+class DataBaseTeste
 {
     public $connect;
     public $data;
@@ -34,38 +34,21 @@ class DataBase
         return mysqli_real_escape_string($this->connect, stripslashes(htmlspecialchars($data)));
     }
 
-    function logIn($table, $username, $password)
+    function logInTeste($table, $username)
     {
         $username = $this->prepareData($username);
-        $password = $this->prepareData($password);
-        $this->sql = "select * from " . $table . " where user_login = '" . $username . "'";
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) != 0) {
             $dbusername = $row['user_login'];
-            $dbpassword = $row['user_pass'];
-            if ($dbusername == $username && password_verify($password, password_hash($dbpassword))) {
+            if ($dbusername == $username) {
                 $login = true;
             } else $login = false;
         } else $login = false;
 
         return $login;
     }
-
-    function signUp($table, $fullname, $email, $username, $password)
-    {
-        $fullname = $this->prepareData($fullname);
-        $username = $this->prepareData($username);
-        $password = $this->prepareData($password);
-        $email = $this->prepareData($email);
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        $this->sql =
-            "INSERT INTO " . $table . " (fullname, username, password, email) VALUES ('" . $fullname . "','" . $username . "','" . $password . "','" . $email . "')";
-        if (mysqli_query($this->connect, $this->sql)) {
-            return true;
-        } else return false;
-    }
-
 }
 
 ?>

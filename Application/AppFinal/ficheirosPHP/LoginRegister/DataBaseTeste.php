@@ -37,7 +37,7 @@ class DataBaseTeste
     function logInTeste($table, $username)
     {
         $username = $this->prepareData($username);
-        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
+        $this->sql = "select * from " . $table . " where user_login = '" . $username . "'";
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) != 0) {

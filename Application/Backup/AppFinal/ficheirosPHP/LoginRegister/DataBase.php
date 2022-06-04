@@ -38,13 +38,13 @@ class DataBase
     {
         $username = $this->prepareData($username);
         $password = $this->prepareData($password);
-        $this->sql = "select * from " . $table . " where user_login = '" . $username . "'";
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) != 0) {
             $dbusername = $row['user_login'];
             $dbpassword = $row['user_pass'];
-            if ($dbusername == $username && password_verify($password, password_hash($dbpassword))) {
+            if ($dbusername == $username && password_verify($password, $dbpassword)) {
                 $login = true;
             } else $login = false;
         } else $login = false;
@@ -66,6 +66,21 @@ class DataBase
         } else return false;
     }
 
+    function userProfile($table, $username)
+    {
+        $username = $this->prepareData($username);
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
+        $result = mysqli_query($this->connect, $this->sql);
+        $row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) != 0) {
+            $dbusername = $row['user_login'];
+            if ($dbusername == $username) {
+                $login = true;
+            } else $login = false;
+        } else $login = false;
+
+        return $login;
+    }
 }
 
 ?>
