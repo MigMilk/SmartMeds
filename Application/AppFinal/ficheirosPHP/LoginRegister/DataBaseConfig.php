@@ -10,9 +10,9 @@ class DataBaseConfig
     public function __construct()
     {
 
-        $this->servername = 'mysql-hosting.ua.pt';
-        $this->username = 'deti-smed-dbo';
-        $this->password = 'wi93zxpKhqDwtz2a';
+        $this->servername = 'localhost';
+        $this->username = 'smartmeds';
+        $this->password = 'smartmeds_123';
         $this->databasename = 'deti-smed';
 
     }

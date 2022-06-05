@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/btnRegister"
@@ -13,9 +12,10 @@
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="Register"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBACK"
         app:layout_constraintEnd_toEndOf="@+id/inputConfirmPassword"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/inputConfirmPassword"
         app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword" />
 
@@ -32,14 +32,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/inputFirstName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
@@ -51,7 +50,9 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/inputLastName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="TouchTargetSizeCheck" />
@@ -60,7 +61,6 @@
         android:id="@+id/inputLastName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -72,7 +72,9 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/inputLocation"
         app:layout_constraintEnd_toEndOf="@+id/inputFirstName"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/inputFirstName"
         app:layout_constraintTop_toBottomOf="@+id/inputFirstName" />
 
@@ -80,7 +82,6 @@
         android:id="@+id/inputLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Location"
@@ -91,7 +92,9 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/inputEmail"
         app:layout_constraintEnd_toEndOf="@+id/inputLastName"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/inputLastName"
         app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
 
@@ -99,7 +102,6 @@
         android:id="@+id/inputEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Email"
@@ -110,9 +112,11 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/inputPassword"
         app:layout_constraintEnd_toEndOf="@+id/inputLocation"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/inputLocation"
-        app:layout_constraintTop_toBottomOf="@+id/inputLocation"/>
+        app:layout_constraintTop_toBottomOf="@+id/inputLocation" />
     <!--android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_baseline_email_24"-->
 
@@ -120,7 +124,6 @@
         android:id="@+id/inputPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Password"
@@ -131,7 +134,9 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/inputConfirmPassword"
         app:layout_constraintEnd_toEndOf="@+id/inputEmail"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/inputEmail"
         app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
     <!--android:background="@drawable/input_bg"
@@ -141,8 +146,7 @@
         android:id="@+id/inputConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-       android:drawablePadding="10dp"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPersonName"
@@ -152,7 +156,9 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="@+id/inputPassword"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/inputPassword"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
@@ -160,9 +166,10 @@
         android:id="@+id/buttonBACK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="Return"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 

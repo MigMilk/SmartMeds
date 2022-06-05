@@ -12,6 +12,9 @@
         android:theme="@style/Theme.AplicacaoFinal"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".Consultas"
             android:exported="false" />
         <activity
@@ -24,15 +27,15 @@
             android:name=".Calendar"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegActivity"
             android:exported="false"
             android:label="@string/title_activity_reg"
             android:theme="@style/Theme.AplicacaoFinal.NoActionBar" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".Login"
@@ -43,6 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>
